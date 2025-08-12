@@ -1,21 +1,19 @@
 class Stack:
     def __init__(self):
         self.items = []
-        
+    
     def push(self, item):
         self.items.append(item)
-        
-        
+    
     def pop(self):
         if not self.is_empty():
             return self.items.pop()
-        return "stack is Empty"
-    
+        return "Stack is Empty  "
     
     def peek(self):
         if not self.is_empty():
             return self.items[-1]
-        return "stack is empty"
+        return "Stack is Empty"
     
     
     def is_empty(self):
@@ -28,25 +26,29 @@ class Stack:
         return self.items
     
 
-class StringReverse:
+
+class Stringreverse:
+    
     def __init__(self, text):
+        
         self.text = text
         self.stack = Stack()
         
     
     def reverse(self):
-        
         for char in self.text:
             self.stack.push(char)
-        
+            
         reversed_str = ""
         
         while not self.stack.is_empty():
             reversed_str += self.stack.pop()
-        
+            
         return reversed_str
-    
 
-sr = StringReverse("HELLO")
+
+sr = Stringreverse("Hello")
+
 print(sr.reverse())
+        
         
